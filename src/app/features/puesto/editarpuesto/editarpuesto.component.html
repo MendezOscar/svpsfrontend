@@ -1,0 +1,12 @@
+<app-navigation></app-navigation>
+<h3>Create Deduccion</h3>
+<form>
+    <div class="form-group">
+        <label for="categoryName"> Nombre</label>
+        <input name="categoryName" type="text" class="form-control" id="categoryName"
+            placeholder="Introduzca el nombre de la deduccion" [(ngModel)]="nombre">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="editarPuesto()">Save</button>
+    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+</form>

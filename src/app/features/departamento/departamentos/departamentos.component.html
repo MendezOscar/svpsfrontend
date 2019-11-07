@@ -1,0 +1,32 @@
+<app-navigation></app-navigation>
+<h4>Departamentos</h4>
+<button type="button" class="btn btn-success mb-2" (click)="crear()">
+  <i class="fas fa-plus">Crear</i>
+</button>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Departamento</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+        <tr *ngFor="let item of departamentos">
+            <th scope="row">{{item.departamentoId}}</th>
+            <td>{{item.nombre}}</td>
+        <td>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-info"
+                (click)="editar(item.departamentoId)">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
+                <button type="button" class="btn btn-danger"
+                (click)="deleteDepartamento(item.departamentoId)">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+        </td>
+        </tr>
+    </tbody>
+</table>
