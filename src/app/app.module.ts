@@ -31,6 +31,10 @@ import { NavigationuserComponent } from './features/navigationuser/navigationuse
 import { PlaanillauserComponent } from './features/planilla/plaanillauser/plaanillauser.component';
 import { CrearplanillaComponent } from './features/planilla/crearplanilla/crearplanilla.component';
 import { VerplanillaComponent } from './features/planilla/verplanilla/verplanilla.component';
+import { EmpleadosporsexoComponent } from './features/reportes/empleadosporsexo/empleadosporsexo.component';
+import { EmpleadosporsalarioComponent } from './features/reportes/empleadosporsalario/empleadosporsalario.component';
+import { EmpleadosporpuestoComponent } from './features/reportes/empleadosporpuesto/empleadosporpuesto.component';
+import { PagosComponent } from './features/reportes/pagos/pagos.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +65,11 @@ import { VerplanillaComponent } from './features/planilla/verplanilla/verplanill
     NavigationuserComponent,
     PlaanillauserComponent,
     CrearplanillaComponent,
-    VerplanillaComponent
+    VerplanillaComponent,
+    EmpleadosporsexoComponent,
+    EmpleadosporsalarioComponent,
+    EmpleadosporpuestoComponent,
+    PagosComponent
   ],
   imports: [
     BrowserModule,

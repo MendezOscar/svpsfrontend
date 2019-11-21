@@ -5,27 +5,30 @@
     <input name="nombre" type="text" class="form-control" id="nombre" [(ngModel)]="empleadoId">
 </div>
 <button type="button" class="btn btn-success mb-2" (click)="getPlanilla()">
-  <i class="fas fa-plus">Crear</i>
+  <i class="fas fa-plus">Ver</i>
 </button>
 <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">Numero</th>
       <th scope="col">Fecha</th>
-      <th scope="col">Bonos</th>
-      <th scope="col">Deducciones</th>
       <th scope="col">Salariofinal</th>
+      <th scope="col">Accion</th>
     </tr>
   </thead>
   <tbody>
         <tr *ngFor="let item of planillas">
-            <th scope="row">{{item.planillaId}}</th>
-            <th>{{item.numero}}</th>
+            <th scope="row">{{item.panillaId}}</th>
             <th>{{item.fecha}}</th>
-            <th>{{item.totalbono}}</th>
-            <th>{{item.totaldeduccion}}</th>
-            <th>{{item.salariofinal}}</th>
+            <th>{{item.salario}}</th>
+            <td>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary"
+                    (click)="verplanilla(item.panillaId)">
+                        <i class="fa fa-eye"></i>
+                    </button>
+                </div>
+            </td>
         </tr>
     </tbody>
 </table>

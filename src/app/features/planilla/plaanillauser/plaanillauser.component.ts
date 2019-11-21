@@ -19,9 +19,12 @@ export class PlaanillauserComponent implements OnInit {
   }
 
   getPlanilla() {
-
     this.planillaService.getPlanillaByEmpleado(parseInt(this.empleadoId)).subscribe(data => {
       this.planillas = data;
     });
+  }
+
+  verplanilla(id: number) {
+    this.router.navigate(['/verplanilla', id]);
   }
 }
