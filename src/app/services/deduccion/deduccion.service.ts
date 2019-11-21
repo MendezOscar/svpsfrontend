@@ -19,6 +19,10 @@ export class DeduccionService {
     return this.http.get<Deduccion>(this.apiUrl + '/' + id);
   }
 
+  getDeduccionByPlanilla(idplanilla: number, idempleado: number) {
+    return this.http.get<Deduccion[]>(this.apiUrl + '/' + idplanilla + '/' + idempleado);
+  }
+
   deleteDeduccion(id: number) {
     return this.http.delete(this.apiUrl + '/' + id);
   }

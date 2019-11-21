@@ -1,0 +1,168 @@
+<app-navigation></app-navigation>
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <h4>Crear planilla</h4>
+            <form>
+                <div class="form-group">
+                    <label for="fecha"> Fecha</label>
+                    <input name="fecha" type="text" class="form-control" id="fecha" [(ngModel)]="fecha">
+                </div>
+
+                <div class="form-group">
+                    <label for="cursoControlSelect">Seleccione el nombre del empleado</label>
+                    <select name="nombreCurso" class="form-control" id="cursoControlSelect" [(ngModel)]="empleadoId"
+                        (click)="getEmpleadoById()">
+                        <option *ngFor="let item of empleados" [value]="item.empleadoId">{{
+                                item.nombre
+                              }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="salario"> Salario</label>
+                    <input name="salario" type="text" class="form-control" id="salario" [(ngModel)]="salario">
+                </div>
+
+                <button type="submit" class="btn btn-primary" (click)="crearPlanilla()">Save</button>
+                <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+                <br />
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <br />
+            <h4>Añadir bono</h4>
+            <div class="form-group">
+                <label for="nombreBono"> Nombre</label>
+                <input name="nombreBono" type="text" class="form-control" id="nombreBono" [(ngModel)]="nombreBono">
+            </div>
+
+            <div class="form-group">
+                <label for="montoBono"> Monto</label>
+                <input name="montoBono" type="text" class="form-control" id="montoBono" [(ngModel)]="montoBono">
+            </div>
+
+            <div class="form-group">
+                <label for="montoBono"> Empleado</label>
+                <input name="empleadoId" type="text" class="form-control" id="empleadoId" [(ngModel)]="empleadoId">
+            </div>
+
+            <div class="form-group">
+                <label for="cursoControlSelect">Seleccione la planilla</label>
+                <select name="planillaidBono" class="form-control" id="cursoControlSelect" [(ngModel)]="planillaidBono"
+                    (click)="getPlanillas()">
+                    <option *ngFor="let item of planillas" [value]="item.panillaId">{{
+                                    item.panillaId
+                                  }}</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="addBono()">Añadir</button>
+            <br />
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Bono</th>
+                        <th scope="col">Monto</th>
+                        <th scope="col">Planilla</th>
+                        <th scope="col">Empleado</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of bonos">
+                        <th scope="row">{{item.bonoId}}</th>
+                        <td>{{item.nombre}}</td>
+                        <td>{{item.monto}}</td>
+                        <td>{{item.planillaId}}</td>
+                        <td>{{item.bonoId}}</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-info" (click)="editar(item.bonoId)">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button>
+                                <button type="button" class="btn btn-danger" (click)="deleteCategory(item.bonoId)">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br/>
+            <br/>
+            <div class="form-group">
+                <label for="salariototal"> Salario final</label>
+                <input name="salariototal" type="salariototal" class="form-control" id="salariototal" [(ngModel)]="salariototal">
+            </div>
+        </div>
+        <div class="col">
+            <br />
+            <h4>Añadir deduccion</h4>
+            <div class="form-group">
+                <label for="nombreDeducicon"> Nombre</label>
+                <input name="nombreDeducicon" type="text" class="form-control" id="nombreDeducicon"
+                    [(ngModel)]="nombreDeducicon">
+            </div>
+
+            <div class="form-group">
+                <label for="montoDeduccion"> Monto</label>
+                <input name="montoDeduccion" type="text" class="form-control" id="montoDeduccion"
+                    [(ngModel)]="montoDeduccion">
+            </div>
+
+            <div class="form-group">
+                <label for="montoBono"> Empleado</label>
+                <input name="empleadoId" type="text" class="form-control" id="empleadoId" [(ngModel)]="empleadoId">
+            </div>
+
+            <div class="form-group">
+                <label for="cursoControlSelect">Seleccione la planilla</label>
+                <select name="planillaidDeduccion" class="form-control" id="cursoControlSelect"
+                    [(ngModel)]="planillaidDeduccion" (click)="getPlanillas()">
+                    <option *ngFor="let item of planillas" [value]="item.panillaId">{{
+                                item.panillaId
+                              }}</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="addDeduccion()">Añadir</button>
+            <br/>
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Deduccion</th>
+                    <th scope="col">Monto</th>
+                    <th scope="col">Empleado</th>
+                    <th scope="col">Planilla</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                      <tr *ngFor="let item of deducciones">
+                          <th scope="row">{{item.deduccionId}}</th>
+                          <td>{{item.nombre}}</td>
+                          <td>{{item.monto}}</td>
+                          <td>{{item.empleadoId}}</td>
+                          <td>{{item.planillaId}}</td>
+                      <td>
+                          <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-info"
+                              (click)="editarDeduccion(item.deduccionId)">
+                                  <i class="fas fa-pencil-alt"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger"
+                              (click)="deleteDeduccion(item.deduccionId)">
+                                  <i class="fas fa-trash-alt"></i>
+                              </button>
+                          </div>
+                      </td>
+                      </tr>
+                  </tbody>
+              </table>
+              
+        </div>
+    </div>
+</div>

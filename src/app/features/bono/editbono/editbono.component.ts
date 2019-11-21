@@ -12,6 +12,8 @@ export class EditbonoComponent implements OnInit {
   bono: Bono;
   nombre: string;
   monto: string;
+  empleado: string;
+  planilla: string;
 
   constructor(private router: Router, private bonoService: BonoService, private route: ActivatedRoute) {
     this.bono = new Bono();
@@ -32,6 +34,8 @@ export class EditbonoComponent implements OnInit {
   editarBono() {
     this.bono.nombre = this.nombre;
     this.bono.monto = parseFloat(this.monto);
+    this.bono.empleadoId = parseInt(this.empleado);
+    this.bono.planillaId = parseInt(this.planilla);
     this.bonoService.editBono(this.bono).subscribe(() => {
       this.router.navigate(['/bono']);
     });

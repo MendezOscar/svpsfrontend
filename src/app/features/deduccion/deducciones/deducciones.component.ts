@@ -8,6 +8,7 @@ import { Deduccion } from 'src/app/models/Deduccion';
   templateUrl: './deducciones.component.html',
   styleUrls: ['./deducciones.component.css']
 })
+
 export class DeduccionesComponent implements OnInit {
   deducciones: Deduccion[];
 
@@ -33,7 +34,7 @@ export class DeduccionesComponent implements OnInit {
   }
 
   crear() {
-    this.router.navigate(['/creardeduccion']);
+    this.router.navigate(['/crearusuario']);
   }
 
   editar(id: number) {

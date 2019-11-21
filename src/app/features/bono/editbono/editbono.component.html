@@ -13,6 +13,18 @@
             placeholder="Introduzca el monto del bono " [(ngModel)]="monto">
     </div>
 
+    <div class="form-group">
+        <label for="categoryName"> Empleado</label>
+        <input name="categoryName" type="text" class="form-control" id="empleado"
+            placeholder="Introduzca el monto del bono " [(ngModel)]="empleado">
+    </div>
+
+    <div class="form-group">
+        <label for="categoryName"> Planilla</label>
+        <input name="categoryName" type="text" class="form-control" id="planilla"
+            placeholder="Introduzca el monto del bono " [(ngModel)]="planilla">
+    </div>
+
 
     <button type="submit" class="btn btn-primary" (click)="editarBono()">Save</button>
     <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>

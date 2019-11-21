@@ -1,0 +1,80 @@
+<app-navigation></app-navigation>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4>Planilla</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Empleado</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Salario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{planilla.panillaId}}</th>
+                        <th>{{planilla.empleadoid}}</th>
+                        <th>{{planilla.fecha}}</th>
+                        <th>{{planilla.salario}}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <br />
+        <div class="col">
+            <h4>Bonos</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Bono</th>
+                        <th scope="col">Monto</th>
+                        <th scope="col">Planilla</th>
+                        <th scope="col">Empleado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of bonos">
+                        <th scope="row">{{item.bonoId}}</th>
+                        <td>{{item.nombre}}</td>
+                        <td>{{item.monto}}</td>
+                        <td>{{item.planillaId}}</td>
+                        <td>{{item.empleadoId}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <div class="form-group">
+                <label for="fecha"> Salario final</label>
+                <input name="fecha" type="text" class="form-control" id="fecha" [(ngModel)]="salariototal">
+            </div>
+        </div>
+        <div class="col">
+            <h4>Deducciones</h4>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Deduccion</th>
+                        <th scope="col">Monto</th>
+                        <th scope="col">Empleado</th>
+                        <th scope="col">Planilla</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of deducciones">
+                        <th scope="row">{{item.deduccionId}}</th>
+                        <td>{{item.nombre}}</td>
+                        <td>{{item.monto}}</td>
+                        <td>{{item.empleadoId}}</td>
+                        <td>{{item.planillaId}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -21,8 +21,12 @@ export class LoginComponent implements OnInit {
   getUserByLogin() {
     this.userService.getUserById(this.username, this.clave).subscribe(data => {
       this.user = data;
-      console.log();
-      this.router.navigate(['/home']);
+      if (this.user.tipo === '1') {
+        this.router.navigate(['/home']);
+      } else {
+        this.router.navigate(['/homeuser']);
+      }
+
     });
   }
 

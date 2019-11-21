@@ -12,6 +12,8 @@ export class EditardeduccionComponent implements OnInit {
   deduccion: Deduccion;
   nombre: string;
   monto: string;
+  empleado: string;
+  planilla: string;
 
   constructor(private router: Router, private deduccionService: DeduccionService, private route: ActivatedRoute) { }
 
@@ -29,6 +31,8 @@ export class EditardeduccionComponent implements OnInit {
 
   editarDeduccion() {
     this.deduccion.nombre = this.nombre;
+    this.deduccion.empleadoId = parseInt(this.empleado);
+    this.deduccion.planillaId = parseInt(this.planilla);
     this.deduccion.monto = parseFloat(this.monto);
     this.deduccionService.editDeduccion(this.deduccion).subscribe(() => {
       this.router.navigate(['/deducciones']);

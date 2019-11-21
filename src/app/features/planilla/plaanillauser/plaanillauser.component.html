@@ -1,0 +1,31 @@
+<app-navigationuser></app-navigationuser>
+<h4>Planillas</h4>
+<div class="form-group">
+    <label for="nombre"> Nombre</label>
+    <input name="nombre" type="text" class="form-control" id="nombre" [(ngModel)]="empleadoId">
+</div>
+<button type="button" class="btn btn-success mb-2" (click)="getPlanilla()">
+  <i class="fas fa-plus">Crear</i>
+</button>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Numero</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Bonos</th>
+      <th scope="col">Deducciones</th>
+      <th scope="col">Salariofinal</th>
+    </tr>
+  </thead>
+  <tbody>
+        <tr *ngFor="let item of planillas">
+            <th scope="row">{{item.planillaId}}</th>
+            <th>{{item.numero}}</th>
+            <th>{{item.fecha}}</th>
+            <th>{{item.totalbono}}</th>
+            <th>{{item.totaldeduccion}}</th>
+            <th>{{item.salariofinal}}</th>
+        </tr>
+    </tbody>
+</table>

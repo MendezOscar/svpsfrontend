@@ -1,0 +1,59 @@
+<app-navigation></app-navigation>
+<h3>Edit</h3>
+<form>
+    <div class="form-group">
+        <label for="nombre"> Nombre</label>
+        <input name="nombre" type="text" class="form-control" id="nombre" [(ngModel)]="nombre">
+    </div>
+
+    <div class="form-group">
+        <label for="categoryName"> Telefono</label>
+        <input name="categoryName" type="text" class="form-control" id="categoryName" [(ngModel)]="telefono">
+    </div>
+
+    <div class="form-group">
+        <label for="categoryName"> Sexo</label>
+        <input name="categoryName" type="text" class="form-control" id="categoryName" [(ngModel)]="sexo">
+    </div>
+
+    <div class="form-group">
+        <label for="categoryName"> Direccion</label>
+        <input name="categoryName" type="text" class="form-control" id="categoryName" [(ngModel)]="direccion">
+    </div>
+
+    <div class="form-group">
+        <label for="cursoControlSelect">Seleccione el nombre del puesto</label>
+        <select name="nombreCurso" class="form-control" id="cursoControlSelect" [(ngModel)]="cargoId">
+            <option *ngFor="let item of puestos" [value]="item.puestoId">{{
+            item.nombre
+          }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="cursoControlSelect">Seleccione el nombre del departamento</label>
+        <select name="nombreCurso" class="form-control" id="cursoControlSelect" [(ngModel)]="departamentoId">
+            <option *ngFor="let item of departamentos" [value]="item.departamentoId">{{
+            item.nombre
+          }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="cursoControlSelect">Seleccione el nombre del usuario</label>
+        <select name="nombreCurso" class="form-control" id="cursoControlSelect" [(ngModel)]="userId">
+            <option *ngFor="let item of users" [value]="item.usuarioId">{{
+            item.username
+          }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="categoryName"> Salario</label>
+        <input name="categoryName" type="text" class="form-control" id="categoryName" [(ngModel)]="salario">
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" (click)="editarEmpleado()">Save</button>
+    <button type="submit" class="btn btn-light" (click)="cancel()">Cancel</button>
+</form>

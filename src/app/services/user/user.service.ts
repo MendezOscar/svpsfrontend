@@ -14,6 +14,10 @@ export class UserService {
     return this.http.get<User[]>(this.apiUrl);
   }
 
+  getUser(id: number) {
+    return this.http.get<User>(this.apiUrl + '/' + id);
+  }
+
   getUserById(username: string, clave: string ) {
     return this.http.get<User>(this.apiUrl + '/' + username + '/' + clave);
   }
@@ -27,6 +31,6 @@ export class UserService {
   }
 
   editUser(user: User) {
-    return this.http.put<User>(this.apiUrl + '/' + user.usuarioid, user);
+    return this.http.put<User>(this.apiUrl + '/' + user.usuarioId, user);
   }
 }

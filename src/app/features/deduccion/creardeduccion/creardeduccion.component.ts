@@ -12,6 +12,8 @@ export class CreardeduccionComponent implements OnInit {
   deduccion: Deduccion;
   nombre: string;
   monto: string;
+  empleado: string;
+  planilla: string;
 
   constructor(private router: Router, private deduccionService: DeduccionService) { }
 
@@ -21,6 +23,8 @@ export class CreardeduccionComponent implements OnInit {
   crearDeduccion() {
     this.deduccion = new Deduccion();
     this.deduccion.nombre = this.nombre;
+    this.deduccion.empleadoId = parseInt(this.empleado);
+    this.deduccion.planillaId = parseInt(this.planilla);
     this.deduccion.monto = parseFloat(this.monto);
     if (this.deduccion) {
       this.deduccionService.createDeduccion(this.deduccion).subscribe(() => {

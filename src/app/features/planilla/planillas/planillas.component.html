@@ -1,1 +1,40 @@
-<p>planillas works!</p>
+<app-navigation></app-navigation>
+<h4>Planillas</h4>
+<button type="button" class="btn btn-success mb-2" (click)="crear()">
+  <i class="fas fa-plus">Crear</i>
+</button>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Empleado</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Salario</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+        <tr *ngFor="let item of planillas">
+            <th scope="row">{{item.panillaId}}</th>
+            <th>{{item.empleadoid}}</th>
+            <th>{{item.fecha}}</th>
+            <th>{{item.salario}}</th>
+        <td>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-info"
+                (click)="editar(item.panillaId)">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
+                <button type="button" class="btn btn-danger"
+                (click)="deleteEmpleado(item.panillaId)">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+                <button type="button" class="btn btn-primary"
+                (click)="verplanilla(item.panillaId)">
+                    <i class="fa fa-eye"></i>
+                </button>
+            </div>
+        </td>
+        </tr>
+    </tbody>
+</table>

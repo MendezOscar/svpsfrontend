@@ -21,6 +21,16 @@ import { EditardepartamentoComponent } from './features/departamento/editardepar
 import { CreardepartamentoComponent } from './features/departamento/creardepartamento/creardepartamento.component';
 import { CrearpuestoComponent } from './features/puesto/crearpuesto/crearpuesto.component';
 import { EditarpuestoComponent } from './features/puesto/editarpuesto/editarpuesto.component';
+import { UsersComponent } from './features/user/users/users.component';
+import { CrearusersComponent } from './features/user/crearusers/crearusers.component';
+import { EditarusersComponent } from './features/user/editarusers/editarusers.component';
+import { CrearempleadoComponent } from './features/empleado/crearempleado/crearempleado.component';
+import { EditarempleadoComponent } from './features/empleado/editarempleado/editarempleado.component';
+import { HomeuserComponent } from './features/homeuser/homeuser/homeuser.component';
+import { NavigationuserComponent } from './features/navigationuser/navigationuser/navigationuser.component';
+import { PlaanillauserComponent } from './features/planilla/plaanillauser/plaanillauser.component';
+import { CrearplanillaComponent } from './features/planilla/crearplanilla/crearplanilla.component';
+import { VerplanillaComponent } from './features/planilla/verplanilla/verplanilla.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +51,17 @@ import { EditarpuestoComponent } from './features/puesto/editarpuesto/editarpues
     EditardepartamentoComponent,
     CreardepartamentoComponent,
     CrearpuestoComponent,
-    EditarpuestoComponent
+    EditarpuestoComponent,
+    UsersComponent,
+    CrearusersComponent,
+    EditarusersComponent,
+    CrearempleadoComponent,
+    EditarempleadoComponent,
+    HomeuserComponent,
+    NavigationuserComponent,
+    PlaanillauserComponent,
+    CrearplanillaComponent,
+    VerplanillaComponent
   ],
   imports: [
     BrowserModule,

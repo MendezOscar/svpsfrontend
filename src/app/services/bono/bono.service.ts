@@ -18,6 +18,10 @@ export class BonoService {
     return this.http.get<Bono>(this.apiUrl + '/' + id);
   }
 
+  getBonoByPlanilla(idplanilla: number, idempleado: number) {
+    return this.http.get<Bono[]>(this.apiUrl + '/' + idplanilla + '/' + idempleado);
+  }
+
   deleteBono(id: number) {
     return this.http.delete(this.apiUrl + '/' + id);
   }

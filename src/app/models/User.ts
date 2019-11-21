@@ -1,6 +1,6 @@
 export class User {
-    usuarioid: number;
+    usuarioId: number;
     username: string;
     clave: string;
-    tipo: number;
+    tipo: string;
 }

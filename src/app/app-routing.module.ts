@@ -14,6 +14,18 @@ import { EditardepartamentoComponent } from './features/departamento/editardepar
 import { PuestosComponent } from './features/puesto/puestos/puestos.component';
 import { EditarpuestoComponent } from './features/puesto/editarpuesto/editarpuesto.component';
 import { CrearpuestoComponent } from './features/puesto/crearpuesto/crearpuesto.component';
+import { UsersComponent } from './features/user/users/users.component';
+import { CrearusersComponent } from './features/user/crearusers/crearusers.component';
+import { EditarusersComponent } from './features/user/editarusers/editarusers.component';
+import { EmpleadosComponent } from './features/empleado/empleados/empleados.component';
+import { CrearempleadoComponent } from './features/empleado/crearempleado/crearempleado.component';
+import { EditarempleadoComponent } from './features/empleado/editarempleado/editarempleado.component';
+import { PlanillaService } from './services/planilla/planilla.service';
+import { HomeuserComponent } from './features/homeuser/homeuser/homeuser.component';
+import { PlanillasComponent } from './features/planilla/planillas/planillas.component';
+import { PlaanillauserComponent } from './features/planilla/plaanillauser/plaanillauser.component';
+import { CrearplanillaComponent } from './features/planilla/crearplanilla/crearplanilla.component';
+import { VerplanillaComponent } from './features/planilla/verplanilla/verplanilla.component';
 
 
 const routes: Routes = [
@@ -30,7 +42,18 @@ const routes: Routes = [
   {path: 'editardepartamento/:id', component: EditardepartamentoComponent},
   {path: 'puestos', component: PuestosComponent},
   {path: 'crearpuesto', component: CrearpuestoComponent},
-  {path: 'editarpuesto/:id', component: EditarpuestoComponent}
+  {path: 'editarpuesto/:id', component: EditarpuestoComponent},
+  {path: 'users', component: UsersComponent},
+  {path: 'crearusuario', component: CrearusersComponent},
+  {path: 'editarusuario/:id', component: EditarusersComponent},
+  {path: 'empleados', component: EmpleadosComponent},
+  {path: 'crearempleado', component: CrearempleadoComponent},
+  {path: 'editarempleado/:id', component: EditarempleadoComponent},
+  {path: 'planillas', component: PlanillasComponent},
+  {path: 'homeuser', component: HomeuserComponent},
+  {path: 'planillauser', component: PlaanillauserComponent},
+  {path: 'crearplanilla', component: CrearplanillaComponent},
+  {path: 'verplanilla/:id', component: VerplanillaComponent}
 ];
 
 @NgModule({
