@@ -35,6 +35,9 @@ import { EmpleadosporsexoComponent } from './features/reportes/empleadosporsexo/
 import { EmpleadosporsalarioComponent } from './features/reportes/empleadosporsalario/empleadosporsalario.component';
 import { EmpleadosporpuestoComponent } from './features/reportes/empleadosporpuesto/empleadosporpuesto.component';
 import { PagosComponent } from './features/reportes/pagos/pagos.component';
+import { ReportescargosComponent } from './features/empleado/reportescargos/reportescargos.component';
+import { ReportessexoComponent } from './features/empleado/reportessexo/reportessexo.component';
+import { ReportessalarioComponent } from './features/empleado/reportessalario/reportessalario.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +72,10 @@ import { PagosComponent } from './features/reportes/pagos/pagos.component';
     EmpleadosporsexoComponent,
     EmpleadosporsalarioComponent,
     EmpleadosporpuestoComponent,
-    PagosComponent
+    PagosComponent,
+    ReportescargosComponent,
+    ReportessexoComponent,
+    ReportessalarioComponent
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,18 @@ export class EmpleadoService {
     return this.http.get<Empleado[]>(this.apiUrl);
   }
 
+  getEmpleadoByPuesto(puesto: number) {
+    return this.http.get<Empleado[]>(this.apiUrl + '/by-puesto/' + puesto);
+  }
+
+  getEmpleadoBySexo(sexo: string) {
+    return this.http.get<Empleado[]>(this.apiUrl + '/by-sexo/' + sexo);
+  }
+
+  getEmpleadoBySalario(salario: number) {
+    return this.http.get<Empleado[]>(this.apiUrl + '/by-salario/' + salario);
+  }
+
   getEmpleadoById(id: number) {
     return this.http.get<Empleado>(this.apiUrl + '/' + id);
   }

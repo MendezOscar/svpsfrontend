@@ -1,0 +1,34 @@
+<app-navigation></app-navigation>
+<h4>Empleados</h4>
+<div class="form-group">
+    <label for="cargo"> cargo</label>
+    <input name="cargo" type="text" class="form-control" id="cargo" [(ngModel)]="cargo">
+</div>
+<br/>
+<button type="button" class="btn btn-success mb-2" (click)="getEmpleados()">
+  <i class="fas fa-plus">ver</i>
+</button>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Sexo</th>
+      <th scope="col">Puesto</th>
+      <th scope="col">Departamento</th>
+      <th scope="col">Salario</th>
+    </tr>
+  </thead>
+  <tbody>
+        <tr *ngFor="let item of empleados">
+            <th scope="row">{{item.empleadoId}}</th>
+            <th>{{item.nombre}}</th>
+            <th>{{item.telefono}}</th>
+            <th>{{item.sexo}}</th>
+            <th>{{item.cargoId}}</th>
+            <th>{{item.departamentoId}}</th>
+            <th>{{item.salario}}</th>
+        </tr>
+    </tbody>
+</table>

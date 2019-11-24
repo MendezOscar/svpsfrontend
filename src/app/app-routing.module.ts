@@ -26,6 +26,9 @@ import { PlanillasComponent } from './features/planilla/planillas/planillas.comp
 import { PlaanillauserComponent } from './features/planilla/plaanillauser/plaanillauser.component';
 import { CrearplanillaComponent } from './features/planilla/crearplanilla/crearplanilla.component';
 import { VerplanillaComponent } from './features/planilla/verplanilla/verplanilla.component';
+import { ReportescargosComponent } from './features/empleado/reportescargos/reportescargos.component';
+import { ReportessexoComponent } from './features/empleado/reportessexo/reportessexo.component';
+import { ReportessalarioComponent } from './features/empleado/reportessalario/reportessalario.component';
 
 
 const routes: Routes = [
@@ -53,7 +56,10 @@ const routes: Routes = [
   {path: 'homeuser', component: HomeuserComponent},
   {path: 'planillauser', component: PlaanillauserComponent},
   {path: 'crearplanilla', component: CrearplanillaComponent},
-  {path: 'verplanilla/:id', component: VerplanillaComponent}
+  {path: 'verplanilla/:id', component: VerplanillaComponent},
+  {path: 'empleadoxcargo', component: ReportescargosComponent},
+  {path: 'empleadoxsexo', component: ReportessexoComponent},
+  {path: 'empleadoxsalario', component: ReportessalarioComponent}
 ];
 
 @NgModule({
